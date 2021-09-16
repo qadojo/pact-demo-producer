@@ -5,7 +5,7 @@ server.use(express.json())
 
 server.get('/', (_, res) => {
   res.json(
-    { status: 'ok', data: 'else' }
+    { status: 'ok', data: 'something useful here' }
   )
 })
 

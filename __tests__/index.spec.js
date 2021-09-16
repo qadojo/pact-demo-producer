@@ -14,7 +14,7 @@ describe('endpoint', () => {
     publishVerificationResult: process.env.PACT_BROKER_PUBLISH === 'true',
     pactBrokerUsername: process.env.PACT_BROKER_USER,
     pactBrokerPassword: process.env.PACT_BROKER_PASSWORD,
-    providerVersion: '1.0.' + process.env.HOSTNAME,
+    providerVersion: process.env.ghprbActualCommit || process.env.GIT_COMMIT_SHORT_HASH || `${process.env.HOSTNAME}.${new Date()}`,
   }
 
   beforeEach((done) => {
